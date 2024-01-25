@@ -1,0 +1,15 @@
+[Unit]
+Description=Telegram_test_bot
+After=syslog.target
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=""
+ExecStart="python_in_venv" "main.py_full_path"
+RestartSec=10
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
