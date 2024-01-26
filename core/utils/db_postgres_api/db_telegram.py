@@ -8,7 +8,7 @@ from typing import List
 import logging
 
 
-from data import config
+from core.utils.db_postgres_api.data import config
 
 db = Gino()
 
