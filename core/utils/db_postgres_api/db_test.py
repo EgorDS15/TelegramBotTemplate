@@ -3,7 +3,7 @@ import datetime
 
 from core.utils.db_postgres_api import quick_commands
 from core.utils.db_postgres_api.db_telegram import db
-from data import config
+from core.utils.db_postgres_api.data import config
 
 
 async def db_test():
