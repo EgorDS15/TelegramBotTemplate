@@ -7,8 +7,8 @@ import sqlalchemy as sa
 from typing import List
 import logging
 
-
-from core.utils.db_postgres_api.data import config
+# from core.settings import Settings
+from core.utils.data import config
 
 db = Gino()
 
@@ -42,18 +42,10 @@ class TimedBaseModel(BaseModel):
     )
 
 
-# class TestModel(BaseModel):
-#     __tablename__ = 'test_model'
-#     user_id = Column(BigInteger, primary_key=True)
-#     name = Column(String(50))
-#
-
-
 async def on_startup(dispatcher: Dispatcher):
 
     logging.info("Подключение к Postgres")
 
-    # logger.info("Setup PostgreSQL Connection")
     await db.set_bind(config.POSTGRES_URI)
 
 

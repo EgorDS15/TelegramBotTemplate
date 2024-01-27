@@ -1,16 +1,13 @@
 from aiogram import Router
-from diffusers import DiffusionPipeline
-import torch
 import requests
-import io
-from PIL import Image
 
 router = Router()
 
 # class TextToImage:
 #     def __init__(self):
 #         self.pipe = DiffusionPipeline.from_pretrained(
-#             "playgroundai/playground-v2-1024px-aesthetic",       # здесь либо указанная ссылка или ссылка на локалькую папку с моделью
+# здесь либо указанная ссылка или ссылка на локальную папку с моделью
+#             "playgroundai/playground-v2-1024px-aesthetic",
 #             torch_dtype=torch.float16,
 #             use_safetensors=True,
 #             add_watermarker=False,
@@ -36,5 +33,5 @@ class TextToImage:
         response = requests.post(self.api_url, headers=headers, json={
             "inputs": text,
             "options": {"wait_for_model": True}
-                                                                      })
+        })
         return response.content
