@@ -7,19 +7,20 @@ from aiogram.filters import CommandStart, Command
 from aiogram.types import Message
 
 from core.models.text_to_image import TextToImage
-from core.settings import config
+# from core.settings import config
+from core.utils.data import config
 
 router = Router()
 
 
 @router.startup()
 async def start_bot(bot: Bot):
-    await bot.send_message(config.admin_id.get_secret_value(), 'Бот запущен')
+    await bot.send_message(config.ADMIN_ID, 'Бот запущен')
 
 
 @router.shutdown()
-async def stop_bot(bot: Bot):
-    await bot.send_message(config.admin_id.get_secret_value(), 'Бот остановлен')
+async def start_bot(bot: Bot):
+    await bot.send_message(config.ADMIN_ID, 'Бот запущен')
 
 
 @router.message(CommandStart())

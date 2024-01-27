@@ -7,22 +7,20 @@ from aiogram import Dispatcher
 from core.filters import filter_media
 from core.models import text_to_image
 from core.handlers import basic_bot_messages, models_messages
-from core.settings import config
-from core.utils import user_inputs
+from core.utils.data import config
 
 router = Router()
 
 
 async def main():
-    bot = Bot(token=config.bot_token.get_secret_value(), parse_mode='HTML')
+    bot = Bot(token=config.BOT_TOKEN, parse_mode='HTML')
     dp = Dispatcher()
 
     dp.include_routers(
         models_messages.router,
         basic_bot_messages.router,
         filter_media.router,
-        text_to_image.router,
-        # user_inputs.router
+        text_to_image.router
     )
 
     # Сбор логов работы и вывод в консоли
