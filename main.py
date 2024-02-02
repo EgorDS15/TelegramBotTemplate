@@ -5,7 +5,7 @@ from aiogram import Bot, Router
 from aiogram import Dispatcher
 
 from core.filters import filter_media
-from core.models import text_to_image
+from core.models import text_to_image, gpt
 from core.handlers import basic_bot_messages, models_messages
 from core.utils.data import config
 
@@ -18,6 +18,7 @@ async def main():
 
     dp.include_routers(
         models_messages.router,
+        # gpt.router,
         basic_bot_messages.router,
         filter_media.router,
         text_to_image.router

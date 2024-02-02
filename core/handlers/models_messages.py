@@ -17,13 +17,13 @@ from core.utils.user_inputs import GetUserInput
 router = Router()
 
 
-# TODO: 1. Получаем каманду
+# TODO: 1. Получаем команду
 # TODO: 2. Пока не получаем запрос "закончить" от пользователя
 # TODO: 3. Получаем запрос от пользователя на генерацию
 # TODO: 4. Генерация изображения
 # TODO: 5. Обновления статуса по команде
 @router.message(Command("image_generation"))
-async def get_input_image_generation(message: Message, bot: Bot, state: FSMContext):
+async def get_input_image_generation(message: Message, state: FSMContext):
     await message.answer("Когда захотите закончить генерацию, введите - /cancel. Напишите, "
                          "что вы хотели бы видеть на картине?")
     res = await state.set_state(GetUserInput.user_input)

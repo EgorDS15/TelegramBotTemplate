@@ -29,7 +29,7 @@ filelock==3.13.1
 Flask==3.0.1
 frozenlist==1.4.1
 fsspec==2023.12.2
-g4f==0.2.0.4
+g4f==0.2.0.9
 googletrans==4.0.0rc1
 gino==1.0.1
 h11==0.9.0

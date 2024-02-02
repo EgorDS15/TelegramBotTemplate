@@ -20,7 +20,7 @@ async def start_bot(bot: Bot):
 
 @router.shutdown()
 async def start_bot(bot: Bot):
-    await bot.send_message(config.ADMIN_ID, 'Бот запущен')
+    await bot.send_message(config.ADMIN_ID, 'Бот остановлен')
 
 
 @router.message(CommandStart())
