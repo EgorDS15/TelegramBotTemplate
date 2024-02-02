@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<svg fill="none" viewBox="0 0 800 400" width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+    <foreignObject width="100%" height="100%">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <style>
+                @keyframes titleAnimation {
+                    0% {
+                        transform: rotate(3deg);
+                    }
+                    100% {
+                        transform: rotate(-3deg);
+                    }
+                }
+
+                .animate-title
+                {
+                    height: auto;
+                    margin: 0 auto;
+                    animation: titleAnimation ease-in-out 1s infinite alternate;
+                }
+
+                p.title {
+                    font-weight: bold;
+                    font-size: 70px;
+                    position: relative;
+                    background-size: auto auto;
+                    background-clip: border-box;
+                    background: linear-gradient(-45deg, #4B0082, #8A2BE2, #191970, #DA70D6, #708090);
+                    animation: background 10s ease infinite;
+                    background-size: 600% 400%;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+
+                @keyframes subtitleAnimation {
+                    0% {
+                        transform: none;
+                    }
+                    100% {
+                        transform: none;
+                    }
+                }
+
+                .animate-subtitle
+                {
+                    height: auto;
+                    margin: 0 auto;
+                    animation: subtitleAnimation ease-in-out 1s infinite alternate;
+                }
+
+                p.subtitle {
+                    font-weight: bold;
+                    font-size: 30px;
+                    position: relative;
+                    background-size: auto auto;
+                    background-clip: border-box;
+                    background: linear-gradient(-45deg, #4B0082, #8A2BE2, #191970, #DA70D6, #708090);
+                    animation: background 10s ease infinite;
+                    background-size: 600% 400%;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+
+                p:before {
+                    content: attr(data-text);
+                    position: absolute;
+                    z-index: -1;
+                    text-shadow: -1px -1px 0 rgba(255, 255, 255, .5),
+                                 1px 1px 0 rgba(0, 0, 0, .25),
+                                 3px 3px 3px rgba(0, 0, 0, .25),
+                                 10px 10px 20px rgba(0, 0, 0, .5);
+                }
+
+                @keyframes background {
+                    0% {
+                        background-position: 0% 50%;
+                    }
+                    50% {
+                        background-position: 100% 50%;
+                    }
+                    100% {
+                        background-position: 0% 50%;
+                    }
+                }
+
+                .background {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0;
+                    width: 100%;
+                    height: 400px;
+                    background: linear-gradient(-45deg, #4B0082, #8A2BE2, #191970, #DA70D6, #708090);
+                    background-size: 600% 400%;
+                    animation: background 10s ease infinite;
+                    border-radius: 5px;
+                    color: white;
+                    font-family: Helvetica;
+                    text-align: center;
+                }
+            </style>
+
+            <div class="background">
+                <div class="animate-title">
+                    <p class="title" data-text="TelegramBot AI">TelegramBot AI</p>
+                </div>
+                
+                <div class="animate-subtitle">
+                    <p class="subtitle" data-text="By Ovchinnikov Egor">By Ovchinnikov Egor</p>
+                </div>
+            </div>
+        </div>
+    </foreignObject>
+</svg>
+
